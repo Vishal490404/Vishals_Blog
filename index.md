@@ -84,7 +84,7 @@ title: Home
     <p>I have a keen interest in reverse engineering, bug hunting, and cloud technologies. I play CTF's (a lot of them). This blog documents the technical details, architecture, and challenges I faced while building my projects.</p>
 </div>
 
-<h2>Featured Projects</h2>
+<h2>Projects</h2>
 
 <div class="project-grid">
 

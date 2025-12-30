@@ -6,7 +6,7 @@ title: Home
 # Welcome to My Portfolio
 
 Hello! I'm Vishal. I am a backend-focused engineer passionate about understanding and implementing backend systems.
-I have a keen interest in reverse engineering, bug hunting, and cloud technologies. This blog documents the technical details, architecture, and challenges I faced while building my projects. 
+I have a keen interest in reverse engineering, bug hunting, and cloud technologies. I play CTF's. This blog documents the technical details, architecture, and challenges I faced while building my projects. 
 
 ## Featured Projects
 

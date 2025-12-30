@@ -34,49 +34,49 @@ The system is built around a central Web Application that manages workshops, use
 
 <div class="mermaid">
 graph TD
-    subgraph "Management & Frontend"
+    subgraph MF ["Management & Frontend"]
         Instructor[Instructor]
         Participant[Participant]
-        WebApp[Web App / Backend]
-        DB[(Database)]
+        WebApp["Web App / Backend"]
+        DB[("Database")]
     end
 
-    subgraph "Storage"
-        S3[S3 Bucket]
+    subgraph Storage ["Storage"]
+        S3["S3 Bucket"]
     end
 
-    subgraph "Interactive Environment"
+    subgraph IE ["Interactive Environment"]
         JHub[JupyterHub]
-        UserContainer[User Docker Container]
+        UserContainer["User Docker Container"]
     end
 
-    subgraph "Grading Service"
+    subgraph GS ["Grading Service"]
         RabbitMQ[RabbitMQ]
-        Grader[Grading Worker (Docker)]
+        Grader["Grading Worker (Docker)"]
     end
 
     %% Workshop Setup
-    Instructor -->|1. Create Workshop & Upload Content| WebApp
-    WebApp -->|Store Notebooks & Eval Scripts| S3
-    Instructor -->|2. Add Participants| WebApp
+    Instructor -->|"1. Create Workshop & Upload Content"| WebApp
+    WebApp -->|"Store Notebooks & Eval Scripts"| S3
+    Instructor -->|"2. Add Participants"| WebApp
 
     %% User Flow
-    Participant -->|3. Login| JHub
+    Participant -->|"3. Login"| JHub
     JHub -->|Spawn| UserContainer
-    Participant -->|4. Run 'start' command| UserContainer
-    UserContainer -->|Fetch Workshop Files| S3
+    Participant -->|"4. Run 'start' command"| UserContainer
+    UserContainer -->|"Fetch Workshop Files"| S3
     
     %% Grading Flow
-    Participant -->|5. Submit Assignment| WebApp
-    WebApp -->|6. Queue Job| RabbitMQ
-    RabbitMQ -->|7. Process Job| Grader
-    Grader -->|Fetch User Code & Eval Script| S3
-    Grader -->|8. Evaluate (Output/Time)| Grader
-    Grader -->|9. Store Result| WebApp
-    WebApp -->|Update Progress| DB
+    Participant -->|"5. Submit Assignment"| WebApp
+    WebApp -->|"6. Queue Job"| RabbitMQ
+    RabbitMQ -->|"7. Process Job"| Grader
+    Grader -->|"Fetch User Code & Eval Script"| S3
+    Grader -->|"8. Evaluate (Output/Time)"| Grader
+    Grader -->|"9. Store Result"| WebApp
+    WebApp -->|"Update Progress"| DB
 
     %% Completion
-    Participant -->|10. View Progress & Download Certificate| WebApp
+    Participant -->|"10. View Progress & Download Certificate"| WebApp
 </div>
 
 <script type="module">

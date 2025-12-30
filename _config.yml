@@ -1,5 +1,5 @@
-title: Vishal's Project Portfolio
-description: A blog about my technical projects, architecture, and engineering challenges.
+title: engineering-log
+description: From idea to implementation
 theme: jekyll-theme-hacker
 plugins:
   - jekyll-seo-tag

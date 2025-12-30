@@ -26,7 +26,7 @@ To meet the requirements, we set up a **JupyterHub** instance using **DockerSpaw
 2.  Build the Docker image incorporating the driver.
 3.  Configure JupyterHub to spawn containers using this image.
 
-[View full Documentation](https://github.com/Vishal490404/Deep-Learning-Server-Setup/blob/master/docs/index.md)
+[View full Documentation](https://deep-learning-server-setup.readthedocs.io/)
 
 ## Challenges & Solutions
 
@@ -37,6 +37,6 @@ One of the main challenges is resource allocation.
 
 We are working on ways to provide custom memory and CPU allocations.
 
-[View full Challenges Document](https://github.com/Vishal490404/Deep-Learning-Server-Setup/blob/master/docs/project_challenges.md)
+[View full Challenges Document](https://deep-learning-server-setup.readthedocs.io/en/latest/project_challenges/)
 
 [Back to Home](../index.html)

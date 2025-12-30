@@ -20,12 +20,12 @@ WARGAMES is a standalone, containerized Capture The Flag (CTF) game designed to 
 
 The user executes the start script, which pulls the necessary images and spawns a level container. The user solves the challenge in this isolated environment to get the password for the next level.
 
-[View full Architecture Document](https://github.com/Walchand-Linux-Users-Group/WARGAMES_2k24/blob/master/docs/architecture.md)
+[View full Architecture Document](https://wargames.readthedocs.io/en/latest/architecture)
 
 ## Challenges & Solutions
 
 One of the main challenges was ensuring the game was accessible yet secure. By using Docker, we ensured that even if a user "breaks" the game environment, their host machine remains safe.
 
-[View full Challenges Document](https://github.com/Walchand-Linux-Users-Group/WARGAMES_2k24/blob/master/docs/project_challenges.md)
+[View full Challenges Document](https://wargames.readthedocs.io/en/latest/project_challenges/)
 
 [Back to Home](../index.html)

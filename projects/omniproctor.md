@@ -19,7 +19,7 @@ Omniproctor operates on a **Classroom-based model** where teachers create virtua
 3.  **External Link**: It loads the external test link (e.g., HackerRank).
 4.  **OS-Level Security**: The browser enforces security by blocking screen sharing, task switching, and unauthorized network access.
 
-[View full Architecture Document](https://github.com/Vishal490404/Omniproctor/blob/main/docs/architecture.md)
+[View full Architecture Document](https://omniproctor.readthedocs.io/en/latest/architecture)
 
 ## Challenges & Solutions
 
@@ -34,6 +34,6 @@ Instead of blacklisting processes, we **inverted the problem** by controlling ne
 - All other applications and background processes are blocked from accessing the network.
 - This effectively cuts off screen sharing (TeamViewer, Discord, etc.) without needing to identify them individually.
 
-[View full Challenges Document](https://github.com/Vishal490404/Omniproctor/blob/main/docs/project_challenges.md)
+[View full Challenges Document](https://omniproctor.readthedocs.io/en/latest/project_challenges/)
 
 [Back to Home](../index.html)

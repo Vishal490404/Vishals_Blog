@@ -18,13 +18,17 @@ A secure assessment browser designed to mitigate weaknesses in existing online e
 A terminal-based interactive game running in Docker containers. It features intuitive controls and progressive difficulty levels, successfully played by 250+ users.
 [Read more about the Architecture and Challenges &rarr;](./projects/wargames.html)
 
+
+### [WhatsApp-Bot](./projects/whatsapp-bot.html)
+An automated WhatsApp notification system designed to keep competitive programmers updated about upcoming coding contests from major platforms like CodeChef, Codeforces, LeetCode, and AtCoder.
+[Read more about the Architecture and Challenges &rarr;](./projects/whatsapp-bot.html)
+
+### [HPC Grading Service - National Supercomputing Mission](./projects/grading-server.html)
+A terminal-based interactive game running in Docker containers. It features intuitive controls and progressive difficulty levels, successfully played by 250+ users.
+[Read more about the Architecture and Challenges &rarr;](./projects/wargames.html)
+
 ### [Deep Learning Server Setup](./projects/deep-learning-server.html)
 A high-performance deep learning server setup capable of running LLM workloads, with CUDA-enabled environments and JupyterHub integration.
 [Read more about the Architecture and Challenges &rarr;](./projects/deep-learning-server.html)
 
 ---
-
-### Other Projects
-
-- **WhatsApp-Bot**: An automated contest reminder bot using Cron Jobs and Baileys library.
-- **HPC Grading Service**: A grading service for National Supercomputing Mission workshops.

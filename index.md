@@ -11,7 +11,7 @@ I have a keen interest in reverse engineering, bug hunting, and cloud technologi
 ## Featured Projects
 
 ### [Safe Exam Browser (Omniproctor)](./projects/omniproctor.html)
-A secure assessment browser designed to mitigate weaknesses in existing online examination platforms. It implements firewall-level controls to block screen sharing and remote access.
+Omniproctor is a secure assessment browser designed to mitigate weaknesses in existing online examination platforms like HackerRank and Hackerearth.
 [Read more about the Architecture and Challenges &rarr;](./projects/omniproctor.html)
 
 ---
@@ -30,7 +30,7 @@ An automated WhatsApp notification system designed to keep competitive programme
 
 ### [HPC Grading Service - National Supercomputing Mission](./projects/grading-server.html)
 A terminal-based interactive game running in Docker containers. It features intuitive controls and progressive difficulty levels, successfully played by 250+ users.
-[Read more about the Architecture and Challenges &rarr;](./projects/wargames.html)
+[Read more about the Architecture and Challenges &rarr;](./projects/grading-server.html)
 
 ---
 

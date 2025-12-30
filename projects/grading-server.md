@@ -34,11 +34,17 @@ The system is built around a central Web Application that manages workshops, use
 
 <div class="mermaid" style="text-align: center;">
 flowchart TD
-    %% Node Styles
-    classDef actor fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:black;
-    classDef component fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:black;
-    classDef storage fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:black;
-    classDef database fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:black;
+    %% Global Graph Settings
+    linkStyle default stroke:#d4d4d4,stroke-width:2px,fill:none;
+
+    %% Node Styles - Light colors for contrast against dark background
+    classDef actor fill:#e1f5fe,stroke:#0277bd,stroke-width:2px,color:#000;
+    classDef component fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#000;
+    classDef storage fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#000;
+    classDef database fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000;
+    
+    %% Subgraph Styling - White borders and text for dark theme
+    classDef subgraphStyle fill:none,stroke:#fff,stroke-width:1px,stroke-dasharray: 5 5,color:#fff;
 
     subgraph MF ["Management & Frontend"]
         direction TB
@@ -47,50 +53,54 @@ flowchart TD
         WebApp["Web App / Backend"]:::component
         DB[("Database")]:::database
     end
+    class MF subgraphStyle
 
     subgraph IE ["Interactive Environment"]
         direction TB
         JHub["JupyterHub"]:::component
         UserContainer["User Docker Container"]:::component
     end
+    class IE subgraphStyle
 
     subgraph GS ["Grading Service"]
         direction TB
         RabbitMQ["RabbitMQ"]:::component
-        Grader["Grading Worker (Docker)"]:::component
+        Grader["Grading Worker"]:::component
     end
+    class GS subgraphStyle
 
     subgraph Store ["Storage"]
         S3[("S3 Bucket")]:::storage
     end
+    class Store subgraphStyle
 
     %% Workshop Setup
-    Instructor -->|"1. Create Workshop & Upload Content"| WebApp
-    WebApp -.->|"Store Notebooks & Eval Scripts"| S3
+    Instructor -->|"1. Create Workshop"| WebApp
+    WebApp -.->|"Store Content"| S3
     Instructor -->|"2. Add Participants"| WebApp
 
     %% User Flow
     Participant -->|"3. Login"| JHub
     JHub -->|"Spawn"| UserContainer
-    Participant -->|"4. Run 'start' command"| UserContainer
-    UserContainer -.->|"Fetch Workshop Files"| S3
+    Participant -->|"4. Start"| UserContainer
+    UserContainer -.->|"Fetch Files"| S3
     
     %% Grading Flow
-    Participant -->|"5. Submit Assignment"| WebApp
+    Participant -->|"5. Submit"| WebApp
     WebApp -->|"6. Queue Job"| RabbitMQ
-    RabbitMQ -->|"7. Process Job"| Grader
-    Grader -.->|"Fetch User Code & Eval Script"| S3
+    RabbitMQ -->|"7. Process"| Grader
+    Grader -.->|"Fetch Scripts"| S3
     Grader -->|"8. Evaluate"| Grader
     Grader -->|"9. Store Result"| WebApp
     WebApp -->|"Update Progress"| DB
 
     %% Completion
-    Participant -->|"10. View Progress & Download Certificate"| WebApp
+    Participant -->|"10. Certificate"| WebApp
 </div>
 
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
+  mermaid.initialize({ startOnLoad: true, theme: 'dark' });
 </script>
 
 [Back to Home](../index.html)
